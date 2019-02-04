@@ -1,0 +1,108 @@
+$yellow: #ffd900;
+
+/*  About Section */
+#about-1 {
+	/* Yellow Lines */
+	position: relative;
+	
+	&:after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform:translateX(-50%);
+		
+			height: 50%;
+			border-right: 2px solid $yellow;  
+	}
+
+	.html-block {
+		border: 2px solid $yellow;
+		background: black;
+		z-index: 2;
+	}
+}
+
+/* Featured Work Section  */
+#featuredwork {
+	position: relative;
+	/* Yellow lines */
+	&:before {
+		content: '';
+		position: absolute;
+		top: 0; 
+		left: 50%;
+		transform:translateX(-50%);
+
+		height: 40px;
+		border-left: 2px solid #ffd900;
+	}
+	
+	&:after {
+		content: '';
+		position: absolute;
+		top   : 90px;
+		bottom: 90px;
+		right : 18%;
+		
+		width: 10%;
+		border: 2px solid #ffd900;
+		border-left: 0;
+	
+		@media screen and (max-width: 640px){
+			top: 80px;	
+			right: 15%;
+			width: 10%;				
+		}
+		@media screen and (min-width: 640px) and (max-width: 840px){
+				right: 15%;
+				width: 10%;
+			}		
+		@media screen and (min-width: 1200px) {
+				width: 15%;
+			}
+		@media screen and (min-width: 1400px) {
+				width: 18%;
+			}
+	}
+
+	/* Show video titile on hover */
+	.slide {
+		position: relative;
+		&:hover {
+			// Show overlay
+			.sqs-video-wrapper:before {
+				content: '';
+				z-index: 1;
+				
+				position: absolute;
+				top:0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+	
+				background: rgba(0, 0, 0, 0.75);
+			}
+			// show text 
+			.image-slide-title {
+				display: block;
+			}
+		} //.slide:hover
+
+		.image-slide-title {
+			display: none;
+			z-index: 2;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+
+			text-align: center;
+			font-family: bebas-neue;
+			font-size: 2em;  
+			color: white;
+		}
+	} //.slide
+
+
+} // #featuredwork
+
