@@ -1,0 +1,112 @@
+<style>
+    /* Hide images on prod */
+    .Main-content .image-block {
+        display: none;
+    }
+    /* Show images on edit */
+    .Main-content .sqs-editing .image-block {
+      display: block;
+    }
+    /* Always hide white logo image */
+    .Main-content .sqs-editing .image-block:last-child {
+        display: none;
+    }
+
+    body {
+        background-color: #1d1d1d !important;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: '';
+        transition: all 0.5s ease;
+    }   
+    .Header, 
+    .Main, 
+    .Footer,
+    .Mobile-bar--top {
+        background-color: transparent;
+    }
+    .Mobile-bar--top {
+        background-color: rgb(29, 29, 29);
+    }
+    .Footer:after,
+    .Footer:before {
+        display: none;
+  }
+
+  /* Style text */
+  .tweak-header-primary-nav-hover-style-active .Header-nav .Header-nav-item,
+  h1, 
+  h2 a,
+  .Footer-blocks {
+      color: white;
+  }
+  h2 a {
+    border-bottom-color: rgba(255, 255, 255, 0.3)
+  }
+  h2 a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.15)
+  }
+
+  /* Footer icons*/
+  .social-icons-color-black.social-icons-style-regular .sqs-use--icon,
+  .Footer-blocks .sqs-block-html p a {
+      fill: #ffd900 !important; /* yellow */
+      color: #ffd900;
+  }
+  .Footer-blocks .sqs-block-html p a:hover {
+    color: rgba(255, 217, 0, 0.8);
+  }
+  .Mobile-bar-menu,
+  .Mobile-bar-search {
+    stroke: white;
+  }
+
+</style>
+
+
+<script>
+$('document').ready(function() {
+    // DOM
+    var $body = $('body');
+    var $links = $body.find('.Main-content a');
+
+    // Event Binding
+    replaceLogo();
+
+    for(var i=0; i < $links.length; i++){
+        $link = $links[i];
+        $link = $($link);
+
+        $link.on( 'mouseenter', setBackgroundImage.bind(event) );
+        $link.on('mouseout', removeBackgroundImage.bind());
+    }
+
+    function replaceLogo() {
+        let whiteLogo = 'https://static1.squarespace.com/static/5c3f815812b13f83032cb462/t/5c585e6815fcc0dce401d993/1549295211448/Bandit_Icon_white.png';
+        let logo = $body.find('.Header-branding-logo');
+        let mobileLogo = $body.find('.Mobile-bar-branding-logo')
+        // set new logo
+        logo.attr('src', whiteLogo);
+        mobileLogo.attr('src', whiteLogo);
+    }
+
+    // Toggle Background image on hover
+    function removeBackgroundImage() {
+        $body.css('background-image', '');
+    }
+
+    function setBackgroundImage( e ) {
+        link = $(e.target);
+        
+        // find image src
+        linkContainer = link.closest('.sqs-block-html');
+        imageContainer = linkContainer.next('.image-block');
+        imageUrl = (imageContainer.find('img')).attr('src');
+        imageUrl = imageUrl ? imageUrl : '';
+        
+        // set body background image
+        $body.css('background-image',  'url("' + imageUrl + '")')
+    }
+})
+</script>
