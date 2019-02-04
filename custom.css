@@ -1,91 +1,31 @@
-/*#footer::before {
-    height: 25%;
-    display: block;
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    content: "";
+.Footer {
+	-webkit-clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+	clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+}
 
-    -ms-transform: skewY(1.5deg);
-    -moz-transform: skewY(1.5deg);
-    -webkit-transform: skewY(1.5deg);
-    transform: skewY(1.5deg);
-
-    -ms-transform-origin: top right;
-    -moz-transform-origin: top right;
-    -webkit-transform-origin: top right;
-    transform-origin: top right;
-
-    background: inherit;  
-}*/
-@media only screen and (min-width: 1920px) {	
+@media screen and (max-width: 640px) {
 	.Footer {
-	  position: relative;
-	  z-index: 1;
-      padding-top: 10px;
-	}
-	.Footer:before {
-	  background: #ffd900;
-	  content: '';
-	  display: block;
-	  height: 44%;
-	  left: 0;
-	  position: absolute;
-	  right: 0;
-	  z-index: -1;
-	}
-	.Footer:before {
-	  top: 0%;
-	  -webkit-transform: skewY(-3deg);
-	  -ms-transform: skewY(-3deg);
-	  transform: skewY(-3deg);
-	  -webkit-transform-origin: 100% 0; 
-	  -ms-transform-origin: 100% 0;
-	  transform-origin: 100% 0;
-	}
-	.Footer:after {
-	  background: #ffd900;
-	  content: '';
-	  display: block;
-	  height: 98%;
-	  left: 0;
-	  position: absolute;
-	  right: 0;
-	  z-index: -1;
-	}
-	.Footer:after {
-	  top: -115%;
-	  -webkit-transform: skewY(-5deg);
-	  -ms-transform: skewY(-5deg);
-	  transform: skewY(-5deg);
-	  -webkit-transform-origin: 135% 0;
-	  -ms-transform-origin: 135% 0;
-	  transform-origin: 135% 0;
+		-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
 	}
 }
 
-@media only screen and (max-width: 1920px) {
-	.Footer {
-	  position: relative;
-	  z-index: 1;
+	/* //Title Moves On Top Of Photo & Is Transparent// */
+	.summary-item .summary-title {
+		margin: 0px !important;
+		position: absolute;
+		left: 0;
+		top: 30%;
+		width: 100%;
+		text-align: center;
+		color: transparent;
 	}
-	.Footer:before {
-	  background: #fff;
-	  content: '';
-	  display: block;
-	  height: 100%;
-	  left: 0;
-	  position: absolute;
-	  right: 0;
-	  z-index: -1;
+	/* //Title Visible on Hover// */
+	.sqs-block-summary-v2 .summary-item:hover .summary-title {
+		color: #000000;
+		background: transparent;
+		transition: ease-in 300ms !important;
+		-webkit-transition: ease-in 300ms !important;
+		-moz-transition: ease-in 300ms !important;
+		-ms-transition: ease-in 300ms !important;
 	}
-	.Footer:before {
-	  top: -100%;
-	  -webkit-transform: skewY(-7deg);
-	  -ms-transform: skewY(-7deg);
-	  transform: skewY(-7deg);
-	  -webkit-transform-origin: 100% 0; 
-	  -ms-transform-origin: 100% 0;
-	  transform-origin: 100% 0;
-	}
-}
