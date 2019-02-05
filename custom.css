@@ -1,3 +1,8 @@
+/* Angled Footer */
+body.tweak-site-width-option-full-width.tweak-footer-show:not(.tweak-site-border-show),
+body.tweak-site-width-option-full-background.tweak-footer-show:not(.tweak-site-border-show) {
+	background: white;
+}
 .Footer {
 	-webkit-clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
 	clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
@@ -10,22 +15,4 @@
 	}
 }
 
-	/* //Title Moves On Top Of Photo & Is Transparent// */
-	.summary-item .summary-title {
-		margin: 0px !important;
-		position: absolute;
-		left: 0;
-		top: 30%;
-		width: 100%;
-		text-align: center;
-		color: transparent;
-	}
-	/* //Title Visible on Hover// */
-	.sqs-block-summary-v2 .summary-item:hover .summary-title {
-		color: #000000;
-		background: transparent;
-		transition: ease-in 300ms !important;
-		-webkit-transition: ease-in 300ms !important;
-		-moz-transition: ease-in 300ms !important;
-		-ms-transition: ease-in 300ms !important;
-	}
+	
