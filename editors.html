@@ -1,4 +1,8 @@
 <style>
+    /* Always hide white logo image */
+    .sqs-editing > .sqs-row > .sqs-col > .image-block:first-child {
+        display: none;
+    }
     /* Hide images on prod */
     .Main-content .image-block {
         display: none;
@@ -6,10 +10,6 @@
     /* Show images on edit */
     .Main-content .sqs-editing .image-block {
       display: block;
-    }
-    /* Always hide white logo image */
-    .Main-content .sqs-editing .image-block:last-child {
-        display: none;
     }
 
     body {
