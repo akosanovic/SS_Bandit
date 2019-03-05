@@ -1,83 +1,140 @@
-<style >
-/*  About Section */
-#about-1 {
-  /* Yellow Lines */
-  position: relative; }
-  #about-1:after {
-    content: '';
+<style>
+.slide.sqs-gallery-design-grid-slide {
+    position: relative;
+}
+.slide.sqs-gallery-design-grid-slide .image-slide-title {
     position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 50%;
-    border-right: 2px solid #ffd900; }
-  #about-1 .html-block {
-    border: 2px solid #ffd900;
-    background: black;
-    z-index: 2; }
+    top: 50%;
+    transform: translatey(-50%);
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    cursor: pointer;
+}
+.slide.sqs-gallery-design-grid-slide .image-slide-title {
+    cursor: pointer;
+    text-align: center;
+    font-family: 'franklin-gothic-urw';
+    font-weight: 400;
+    font-size: 23px !important;
+}
+.slide.sqs-gallery-design-grid-slide .margin-wrapper:hover img {
+    opacity: .15!important;
+}
+.slide.sqs-gallery-design-grid-slide .margin-wrapper:hover .image-slide-title {
+    opacity: 1;
+}
+.slide.sqs-gallery-design-grid-slide .image-slide-title {
+    opacity: 0;
+}
 
-/* Featured Work Section  */
-#featuredwork {
-  position: relative;
-  /* Yellow lines */
-  /* Show video titile on hover */ }
-  #featuredwork:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 40px;
-    border-left: 2px solid #ffd900; }
-  #featuredwork:after {
-    content: '';
-    position: absolute;
-    top: 90px;
-    bottom: 90px;
-    right: 18%;
-    width: 10%;
-    border: 2px solid #ffd900;
-    border-left: 0; }
-    @media screen and (max-width: 640px) {
-      #featuredwork:after {
-        top: 80px;
-        right: 15%;
-        width: 10%; } }
-    @media screen and (min-width: 640px) and (max-width: 840px) {
-      #featuredwork:after {
-        right: 15%;
-        width: 10%; } }
-    @media screen and (min-width: 1200px) {
-      #featuredwork:after {
-        width: 15%; } }
-    @media screen and (min-width: 1400px) {
-      #featuredwork:after {
-        width: 18%; } }
-  #featuredwork .slide {
-    position: relative; }
-    #featuredwork .slide:hover .sqs-video-wrapper:before {
-      content: '';
-      z-index: 1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.75); }
-    #featuredwork .slide:hover .image-slide-title {
-      display: block; }
-    #featuredwork .slide .image-slide-title {
-      display: none;
-      z-index: 2;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      text-align: center;
-      font-family: bebas-neue;
-      font-size: 2em;
-      color: white; }
+  
+.container.Main-hover-fuction52:hover .back-img52 {
+    z-index: 9;
+    position: relative;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+.container.Main-hover-fuction52-2:hover .back-img52-2 {
+    z-index: 9;
+    position: relative;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+img.back-img52, .back-img52-2 {
+    opacity: 0.5;
+}
+a.summary-title-link {font-family: Prata
+  
+  .Main-content .col > .image-block:nth-child(2){
+  	border: 1px solid red;
+  }
+</style>
 
-/*# sourceMappingURL=homepage.css.map */
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+$(function(){
+  $(window).scroll(function(){
+    var winTop2 = $(window).scrollTop();
+    if(winTop2 >= 5500){
+      $('.RiGHT-moveing').addClass("stickly52right");
+    }else{
+      //$('.LeFT-moveing').removeClass("stickly52");
+    }//if-else
+  });//win func.
+});//ready func.
+</script>
 
 
+
+<style>
+.RiGHT-moveing {
+    visibility: hidden;
+}
+  .RiGHT-moveing.stickly52right {
+    visibility: visible;
+}
+  
+  
+.stickly52right {
+	transition: width 1s;
+	border-radius: 4px 0px 0px 4px;
+}  
+ .stickly52right {
+			/* for chrome and safari*/
+			-webkit-animation-duration: 1s;
+			-webkit-animation-name: slidein;
+			/*for firefox*/
+			-moz-animation-duration: 1s;
+			-moz-animation-name: slidein;
+				/* for opera*/
+			-o-animation-duration: 1s;
+			-o-animation-name: slidein;
+				/* Standard syntax*/
+			animation-duration: 1s;
+			animation-name: slidein;
+	}
+	@-webkit-keyframes slidein {
+			from {
+				left: 50%;
+				height: 200px;
+			}
+			to {
+				left: 0;
+			}
+	}
+	@-moz-keyframes slidein {
+			from {
+				left: 50%;
+				height: 200px;
+			}
+			to {
+				left: 0;
+			}
+	}
+		@-o-keyframes slidein {
+			from {
+				left: 50%;
+				height: 200px;
+			}
+			to {
+				left: 0;
+			}
+	}
+		@keyframes slidein {
+			from {
+				left: 50%;
+				height: 200px;
+			}
+			to {
+				left: 0;
+			}
+	}
 </style>

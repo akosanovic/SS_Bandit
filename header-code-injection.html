@@ -1,0 +1,112 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+  
+<style>
+/* Increase Specificity */
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) {
+  background-color: #1d1d1d;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Header,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Main,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Footer,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Index-page {
+  background-color: transparent;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top {
+  background-color: #1d1d1d;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Footer:after,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Footer:before {
+  display: none;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .social-icons-color-black.social-icons-style-regular .sqs-use--icon,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Footer-blocks .sqs-block-html p a {
+  fill: #ffd900 !important;
+  /* yellow */
+  color: #ffd900;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Footer-blocks .sqs-block-html p a:hover {
+  color: rgba(255, 217, 0, 0.8);
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar-menu,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar-search {
+  stroke: white;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) h1,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) h2 a,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) h2,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) h3,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) p,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) .Footer-blocks {
+  color: white;
+}
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item:hover,
+body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item.Header-nav-item--active {
+  color: #ffd900;
+}
+</style>
+
+
+<script>
+	
+	document.addEventListener("DOMContentLoaded", function() {
+
+
+	// #collection-5c520e2f575d1fc8d4894937 - editors page
+	// #collection-5c521b3988251b50ff934ed3 - Heather Danosky
+	// #collection-5c521b634ae23726476305f1 - John Piccolo page 
+	// #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
+	// #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
+	// #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
+	// #collection-5c5345980d9297458f1d1810 - Chris Kursel
+	// #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
+	// #collection-5c6ac102104c7b6738d848ab - The Space (Contact Us)
+	
+	var editorsPages = [ 
+		"collection-5c520e2f575d1fc8d4894937", 
+		"collection-5c521b3988251b50ff934ed3",
+		"collection-5c521b634ae23726476305f1",
+		"collection-5c521bd6352f53324a568306",
+		"collection-5c5343d7eef1a12985b577b4",
+		"collection-5c521bfeb91c911f35a8b20b",
+		"collection-5c5345980d9297458f1d1810",
+		"collection-5c5345e5eef1a12985b599e2",
+		"collection-5c6ac102104c7b6738d848ab"
+	]
+	
+	setDarkThemeToPage();
+
+
+	function setDarkThemeToPage() {
+		for (var i = 0; i < editorsPages.length; i++) {
+			var editorsPage = editorsPages[i]
+			
+			var $body = $('body')
+
+			// check if editors page
+			if ($body.attr('id') === editorsPage ) {
+				
+				// set class 
+				$body.addClass('dark-theme');
+			
+				replaceLogo();				
+			}
+		}
+	}
+	function replaceLogo() {
+		var $body = $('body')
+		let logo = $body.find('.Header-branding-logo');
+		let mobileLogo = $body.find('.Mobile-bar-branding-logo');
+		let whiteLogo = "https://static1.squarespace.com/static/5c3f815812b13f83032cb462/5c7946344e17b6641ccec036/5c7946a0971a1878020134c6/1551451810051/Bandit_Icon_white.png";
+		// set new logo
+		logo.attr('src', whiteLogo);
+		mobileLogo.attr('src', whiteLogo);
+	}
+
+})
+
+</script>
