@@ -4,7 +4,40 @@
   crossorigin="anonymous"></script>
   
 <style>
-/* Increase Specificity */
+/* Show Title on Slide Hover - Editors pages  */
+body.dark-theme .sqs-gallery-block-grid .slide {
+	position: relative; 
+}
+body.dark-theme .sqs-gallery-block-grid .slide:hover .sqs-video-wrapper:before {
+	content: '';
+	z-index: 1;
+	position: absolute;
+	top   : 0;
+	left  : 0;
+	right : 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.75); 
+}
+body.dark-theme .sqs-gallery-block-grid .slide:hover .image-slide-title {
+	display: block; 
+}
+body.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
+	display: none;
+	z-index: 2;
+
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	margin-top: 0;
+	
+	text-align: center;
+	font-family: bebas-neue;
+	font-size: 2em;
+	color: white; 
+}
+
+
+/* Set Dark theme to Editors pages */
 body.tweak-site-width-option-full-background.tweak-footer-show.dark-theme:not(.sqs-edit-mode-active) {
   background-color: #1d1d1d;
 }
