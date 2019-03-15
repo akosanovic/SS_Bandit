@@ -1,104 +1,97 @@
 <style>
 
-/*========== Dark Theme Settings ===============*/
-#collection-5c520e2f575d1fc8d4894937 {
-      background-color: #000000  !important;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-image: '';
-      transition: all 0.5s ease;
-  }   
-  body.gif-active {
-    overflow: hidden;
-  }
-  .Footer {
-    background: transparent;
-  }
-  .Footer:after,
-  .Footer:before {
-      display: none;
-  }
-
-
-  /* Video Background */
-
-  /* Hide images on prod */
-  .Main-content .image-block {
-      display: none;
-  }
-  /* Show images on edit */
-  .Main-content .sqs-editing .image-block {
-    display: block;
-  }
-
-
-  h2 a {
-    border-bottom-color: rgba(255, 255, 255, 0.3)
-  }
-  h2 a:hover {
-    color: rgba(255, 255, 255, 0.8);
-    border-bottom-color: rgba(255, 255, 255, 0.15)
-  }
-
-    
-
-
-
-
-</style>
-
-
-<script>
-$('document').ready(function() {
-    // DOM
-    var $body = $('body');
-    var $links = $body.find('.Main-content a');
-
-    // Event Binding
-    for(var i=0; i < $links.length; i++){
-        $link = $links[i];
-        $link = $($link);
-
-        $link.on( 'mouseenter', setBackgroundImage.bind(event) );
-        $link.on('mouseout',    removeBackgroundImage.bind());
+  /*========== Dark Theme Settings ===============*/
+  #collection-5c520e2f575d1fc8d4894937 {
+        background-color: #000000  !important;
+        background-position: top center;
+        background-repeat: no-repeat;
+        background-image: '';
+        transition: all 0.5s ease;
+    }   
+    body.gif-active {
+      overflow: hidden;
     }
-
-    var exitImageUrl = '';
-
-    // Toggle Background image on hover
-    function removeBackgroundImage() {
-        $body.css({ 'background-image' : 'url("' + this.exitImageUrl + '")'});
-       
-        setTimeout(function(){
-          $body.removeClass('gif-active');
-          $body.css({ 'background-image' : ''});
-          this.exitImageUrl = '';
-        }, 1760)
+  
+  
+    /* Video Background */
+  
+    /* Hide images on prod */
+    .Main-content .image-block {
+        display: none;
     }
-
-    function setBackgroundImage( e ) {
-        $body.addClass('gif-active')
-
-        link = $(e.target);
-        
-        // find image src
-        linkContainer = link.closest('.sqs-block-html');
-
-        // find gif container
-        imageContainer = linkContainer.next('.row');
-        backgroundImages = imageContainer.find('img')
-
-        startImgUrl = $(backgroundImages[0]).attr('src');
-        this.exitImageUrl = $(backgroundImages[1]).attr('src');
-        startImgUrl = startImgUrl ? startImgUrl : '';
-        
-        console.log('set background image', startImgUrl)
-        // set body background image
-        $body.css({
-          'background-image' : 'url("' + startImgUrl + '")',
-          'background-repeat': 'no-repeat',
-          'background-size'  : 'contain',
-        });
+    /* Show images on edit */
+    .Main-content .sqs-editing .image-block {
+      display: block;
     }
-})
-</script>
+  
+  
+    h2 a {
+      border-bottom-color: rgba(255, 255, 255, 0.3)
+    }
+    h2 a:hover {
+      color: rgba(255, 255, 255, 0.8);
+      border-bottom-color: rgba(255, 255, 255, 0.15)
+    }
+  
+      
+  
+  
+  
+  
+  </style>
+  
+  
+  <script>
+  $('document').ready(function() {
+      // DOM
+      var $body = $('body');
+      var $links = $body.find('.Main-content a');
+  
+      // Event Binding
+      for(var i=0; i < $links.length; i++){
+          $link = $links[i];
+          $link = $($link);
+  
+          $link.on( 'mouseenter', setBackgroundImage.bind(event) );
+          $link.on('mouseout',    removeBackgroundImage.bind());
+      }
+  
+      var exitImageUrl = '';
+  
+      // Toggle Background image on hover
+      function removeBackgroundImage() {
+          $body.css({ 'background-image' : 'url("' + this.exitImageUrl + '")'});
+         
+          setTimeout(function(){
+            $body.removeClass('gif-active');
+            $body.css({ 'background-image' : ''});
+            this.exitImageUrl = '';
+          }, 1760)
+      }
+  
+      function setBackgroundImage( e ) {
+          $body.addClass('gif-active')
+  
+          link = $(e.target);
+          
+          // find image src
+          linkContainer = link.closest('.sqs-block-html');
+  
+          // find gif container
+          imageContainer = linkContainer.next('.row');
+          backgroundImages = imageContainer.find('img')
+  
+          startImgUrl = $(backgroundImages[0]).attr('src');
+          this.exitImageUrl = $(backgroundImages[1]).attr('src');
+          startImgUrl = startImgUrl ? startImgUrl : '';
+          
+          console.log('set background image', startImgUrl)
+          // set body background image
+          $body.css({
+            'background-image' : 'url("' + startImgUrl + '")',
+            'background-repeat': 'no-repeat',
+            'background-size'  : 'contain',
+          });
+      }
+  })
+  </script>
