@@ -4,6 +4,40 @@
   crossorigin="anonymous"></script>
   
 <style>
+
+/*=========Footer Styling ==============*/
+
+/* Angled Footer */
+.Footer { 
+	background-color: #000;
+	clip-path: unset;
+}
+.Footer-inner {
+	-webkit-font-smoothing: antialiased;
+	clip-path: polygon(0px 40%, 100% 0px, 100% 100%, 0% 100%);
+	background-color: #ffd900;
+}
+@media screen and (max-width: 640px) {
+	.Footer-inner  {
+		-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+	}
+} 
+
+/* Styling Footer  */
+.Footer h3 {
+		color: #1d1d1d !important;
+	}
+	.Footer p, 
+	.Footer .footer-blocks {
+		color: #1c1c1cb0 !important;
+	}
+	.Footer a {
+		color: #000 !important;
+	}
+
+
+
 /* Show Title on Slide Hover - Editors pages  */
 body.dark-theme.dark-theme .sqs-gallery-block-grid .slide {
 	position: relative; 
@@ -43,7 +77,6 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) {
 }
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Header,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Main,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Footer,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Index-page {
   background-color: transparent;
@@ -51,19 +84,13 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Index-page
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top {
   background-color: #1d1d1d;
 }
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Footer:after,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Footer:before {
-  display: none;
-}
+
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .social-icons-color-black.social-icons-style-regular .sqs-use--icon,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Footer-blocks .sqs-block-html p a {
+ {
   fill: #ffd900 !important;
-  /* yellow */
   color: #ffd900;
 }
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Footer-blocks .sqs-block-html p a:hover {
-  color: rgba(255, 217, 0, 0.8);
-}
+
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar-menu,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar-search {
   stroke: white;
@@ -73,8 +100,7 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h1,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h2 a,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h2,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h3,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) p,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Footer-blocks {
+body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) p {
   color: white;
 }
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item:hover,

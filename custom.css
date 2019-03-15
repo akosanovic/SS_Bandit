@@ -1,18 +1,14 @@
-/* Angled Footer */
-body.tweak-site-width-option-full-width.tweak-footer-show:not(.tweak-site-border-show),
-body.tweak-site-width-option-full-background.tweak-footer-show:not(.tweak-site-border-show) {
-	background: white;
-}
-.Footer {
-	-webkit-clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
-	clip-path: polygon(0 40%, 100% 0, 100% 100%, 0% 100%);
+/* about pages bw to color */
+#block-yui_3_17_2_1_1549991771998_4328 img {
+   transition    : all ease-in-out 500ms !important;
+   -moz-filter   : grayscale(1);
+   -webkit-filter: grayscale(1);
+   filter        : grayscale(1);
 }
 
-@media screen and (max-width: 640px) {
-	.Footer {
-		-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
-		clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
-	}
+#block-yui_3_17_2_1_1549991771998_4328
+img:hover {
+  -moz-filter: grayscale(0) !important;
+  -webkit-filter: grayscale(0) !important;
+  filter: grayscale(0) !important;
 }
-
-	
