@@ -6,6 +6,9 @@
   
 <style>
 
+
+
+
 /*=========Footer Styling ==============*/
 
 /* Angled Footer */
@@ -80,7 +83,6 @@ body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) {
   background-color: #000000;
 }
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Header,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Main,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top,
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Index-page {
@@ -112,48 +114,65 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item.Header-nav-item--active {
   color: #ffd900;
 }
+
+
+/* ======== Sticky Header  ============= */
+@media screen and (min-width: 970px) {
+	.Header.Header--top {
+		z-index: 3;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+
+	}
+	.dark-theme .Header.Header--top {
+		background-color: #000;
+	}
+	.Site-inner {
+		padding-top: 118px;
+	}
+}
 </style>
 
 
 <script>
 	
 	document.addEventListener("DOMContentLoaded", function() {
+		var $body = $('body')
 
-
-	// #collection-5c520e2f575d1fc8d4894937 - editors page
-	// #collection-5c521b3988251b50ff934ed3 - Heather Danosky
-	// #collection-5c521b634ae23726476305f1 - John Piccolo page 
-	// #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
-	// #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
-	// #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
-	// #collection-5c5345980d9297458f1d1810 - Chris Kursel
-	// #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
-	// #collection-5c6ac102104c7b6738d848ab - The Space (Contact Us)
-	// #collection-5c825a826e9a7f210e824e1d - New Editor Guy
-	// #collection-5c813802b208fc530a501290 - VFX page
+		// #collection-5c520e2f575d1fc8d4894937 - editors page
+		// #collection-5c521b3988251b50ff934ed3 - Heather Danosky
+		// #collection-5c521b634ae23726476305f1 - John Piccolo page 
+		// #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
+		// #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
+		// #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
+		// #collection-5c5345980d9297458f1d1810 - Chris Kursel
+		// #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
+		// #collection-5c6ac102104c7b6738d848ab - The Space (Contact Us)
+		// #collection-5c825a826e9a7f210e824e1d - New Editor Guy
+		// #collection-5c813802b208fc530a501290 - VFX page
 	
-	var editorsPages = [ 
-		"collection-5c520e2f575d1fc8d4894937", 
-		"collection-5c521b3988251b50ff934ed3",
-		"collection-5c521b634ae23726476305f1",
-		"collection-5c521bd6352f53324a568306",
-		"collection-5c5343d7eef1a12985b577b4",
-		"collection-5c521bfeb91c911f35a8b20b",
-		"collection-5c5345980d9297458f1d1810",
-		"collection-5c5345e5eef1a12985b599e2",
-		"collection-5c6ac102104c7b6738d848ab",
-		"collection-5c825a826e9a7f210e824e1d",
-		"collection-5c813802b208fc530a501290"
-	]
-	
-	setDarkThemeToPage();
+		var editorsPages = [ 
+			"collection-5c520e2f575d1fc8d4894937", 
+			"collection-5c521b3988251b50ff934ed3",
+			"collection-5c521b634ae23726476305f1",
+			"collection-5c521bd6352f53324a568306",
+			"collection-5c5343d7eef1a12985b577b4",
+			"collection-5c521bfeb91c911f35a8b20b",
+			"collection-5c5345980d9297458f1d1810",
+			"collection-5c5345e5eef1a12985b599e2",
+			"collection-5c6ac102104c7b6738d848ab",
+			"collection-5c825a826e9a7f210e824e1d",
+			"collection-5c813802b208fc530a501290"
+		]
+		
+		setDarkThemeToPage();
 
 
 	function setDarkThemeToPage() {
 		for (var i = 0; i < editorsPages.length; i++) {
 			var editorsPage = editorsPages[i]
-			
-			var $body = $('body')
 
 			// check if editors page
 			if ($body.attr('id') === editorsPage ) {
@@ -175,6 +194,15 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 		mobileLogo.attr('src', whiteLogo);
 	}
 
+	// Sticky Header only for desktop theme
+	function stickyHeader() {
+		if( ! $body.hasClass('is-mobile')) {
+			header = $body.find('.Header--top')
+			mainContent = $body.find('.Site.loaded');
+
+			mainContent.css({"padding-top": header.height()})
+		}
+	}
 })
 
 </script>
