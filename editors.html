@@ -3,22 +3,23 @@
   #collection-5c520e2f575d1fc8d4894937 {
     background-color: #000000 !important;
   }
-   /* Style website when gif active */
-  .gif-active .html-block {
-	visibility: hidden;
-  }
+  /* Style website when gif active */
+
   /* navigation and label above animation */
   .gif-active .Site.loaded {
-	  position: relative;
-      z-index: 3;
+    position: relative;
+    z-index: 3;
   }
-  /* .gif-active .Footer {
-	  z-index: 1;
-  } */
+  .gif-active .html-block {
+    visibility: hidden;
+  }
+  .gif-active .html-block.activeLink {
+    visibility: visible;
+  }
 
   .gifContainer,
   .gifOutContainer {
-	z-index: 1;
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -46,7 +47,7 @@
     display: none;
   }
   /* Show images on edit */
-  .Main-content .sqs-editing .image-block, 
+  .Main-content .sqs-editing .image-block,
   .Main-content .sqs-editing .video-block {
     display: block;
   }
@@ -82,8 +83,10 @@
           setBackgroundImage(event, counter);
           counter++;
         },
-        function() {
-          removeBackgroundImage();
+        function(){
+          setTimeout(()=> {
+            removeBackgroundImage();
+          }, 1760) 
         }
       );
     }
@@ -96,62 +99,64 @@
 
     // Toggle Background image on hover
     function removeBackgroundImage() {
-		if(this.outImageUrl) {
-			this.$gifOutContainer = $('<div class="gifOutContainer"></div>');
-			this.$gifOutContainer.css({
-				"background-image": 'url("' + this.outImageUrl + '")',
-				"background-repeat": "no-repeat",
-				"background-size": "cover"
-			});
+      if (this.outImageUrl) {
+        this.$gifOutContainer = $('<div class="gifOutContainer"></div>');
+        this.$gifOutContainer.css({
+          "background-image": 'url("' + this.outImageUrl + '")',
+          "background-repeat": "no-repeat",
+          "background-size": "cover"
+        });
 
-			console.log("mouse out ", this.$gifOutContainer);
+        console.log("mouse out ", this.$gifOutContainer);
 
-			$body.prepend(this.$gifOutContainer);
+        $body.prepend(this.$gifOutContainer);
 
-			// Remove all animation
-			setTimeout(() => {
-				// remove gif start container
-				this.$gifContainer.remove();
-				this.gifContainer = null;
+        // Remove all animation
+        setTimeout(() => {
+          $('.activeLink').removeClass('activeLink');
+         
+          // remove gif start container
+          $('.gifContainer').remove();
+          this.gifContainer = null;
 
-				this.$gifOutContainer.remove();
-				this.$gifOutContainer = null;
-				this.outImageUrl = null;
+          $('.gifOutContainer').remove();
+          this.$gifOutContainer = null;
+          this.outImageUrl = null;
 
-				$body.removeClass("gif-active");
-			}, 2000);
-		}
+          $body.removeClass("gif-active");
+        }, 2000);
+      }
     }
 
     function setBackgroundImage(e, counter) {
       console.log("counter on mouse  over ", counter);
-
-      $body.addClass("gif-active");
+      if (!$body.hasClass('sqs-edit-mode-active')) {
+        $body.addClass("gif-active");
+      }
 
       link = $(e.target);
 
       // find image src
-      linkContainer    = link.closest(".sqs-block-html");
-	  linkContainer.css({'visibility':'visible'})
-      imageContainer   = linkContainer.next(".row");
+      linkContainer = link.closest(".sqs-block-html").addClass('activeLink');
+      imageContainer = linkContainer.next(".row");
       backgroundImages = imageContainer.find("img");
 
-      startImgUrl      = $(backgroundImages[0]).attr("src");
+      startImgUrl = $(backgroundImages[0]).attr("src");
       this.outImageUrl = $(backgroundImages[1]).attr("src");
 
       startImgUrl = startImgUrl.split("?")[0] + "?" + counter;
       this.outImageUrl = this.outImageUrl.split("?")[0] + "?" + counter;
 
       //   Prepend image container to body
-	  if(this.outImageUrl) {
-		this.$gifContainer = $('<div class="gifContainer"></div>');
-		this.$gifContainer.css({
-			"background-image": 'url("' + startImgUrl + '")',
-			"background-repeat": "no-repeat",
-			"background-size": "cover"
-		});
-		$body.prepend(this.$gifContainer);
-	  }    
+      if (this.outImageUrl) {
+        this.$gifContainer = $('<div class="gifContainer"></div>');
+        this.$gifContainer.css({
+          "background-image": 'url("' + startImgUrl + '")',
+          "background-repeat": "no-repeat",
+          "background-size": "cover"
+        });
+        $body.prepend(this.$gifContainer);
+      }
     }
   });
 </script>
