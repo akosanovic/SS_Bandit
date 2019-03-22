@@ -122,8 +122,10 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 	width: 100%;
 }
 /* Close button */
-.Mobile-overlay-close {
+.is-mobile-overlay-active  .Mobile-overlay-close {	
 	z-index: 3;
+	background: transparent;
+	stroke: white;
 }
 .Mobile-overlay-nav .Mobile-overlay-nav-item {
 	text-align: center;
@@ -131,19 +133,8 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 
 /* ======== Sticky Header  ============= */
 @media screen and (min-width: 970px) {
-	.Header.Header--top {
-		z-index: 3;
-		position: fixed;
-		top: 0;
-		left: 0;
-		right: 0;
-
-	}
 	.dark-theme .Header.Header--top {
 		background-color: #000;
-	}
-	.Site-inner {
-		padding-top: 118px;
 	}
 }
 
