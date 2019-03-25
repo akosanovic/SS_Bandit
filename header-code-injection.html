@@ -127,8 +127,28 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 	background: transparent;
 	stroke: white;
 }
+/* Center Navigation */
+.Mobile-overlay-menu-main {
+	max-height: 100%;
+	overflow: hidden;
+}
+.Mobile-overlay-nav {
+	height: 100%;
+	display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction : normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction    : column;
+  flex-direction        : column;
+	-webkit-justify-content: center;
+	-ms-flex-pack          : center;
+	justify-content        : center;
+}
 .Mobile-overlay-nav .Mobile-overlay-nav-item {
 	text-align: center;
+	padding: 20px 0;
 }
 
 /* ======== Sticky Header  ============= */
