@@ -146,9 +146,15 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 	-ms-flex-pack          : center;
 	justify-content        : center;
 }
-.Mobile-overlay-nav .Mobile-overlay-nav-item {
+.Mobile-overlay .Mobile-overlay-nav a.Mobile-overlay-nav-item {
 	text-align: center;
 	padding: 20px 0;
+	font-size: 30px;
+}
+@media screen and (min-width: 768px) {
+	.Mobile-overlay	.Mobile-overlay-nav a.Mobile-overlay-nav-item {
+		font-size: 30px;
+	}
 }
 
 /* ======== Sticky Header  ============= */
