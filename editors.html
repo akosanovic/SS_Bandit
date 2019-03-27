@@ -10,12 +10,7 @@
     position: relative;
     z-index: 3;
   }
-  .gif-active .html-block {
-    visibility: hidden;
-  }
-  .gif-active .html-block.activeLink {
-    visibility: visible;
-  }
+
 
   .gifContainer,
   .gifOutContainer {
@@ -112,9 +107,7 @@
         $body.prepend(this.$gifOutContainer);
 
         // Remove all animation
-        setTimeout(() => {
-          $('.activeLink').removeClass('activeLink');
-         
+        setTimeout(() => {         
           // remove gif start container
           $('.gifContainer').remove();
           this.gifContainer = null;
@@ -137,7 +130,7 @@
       link = $(e.target);
 
       // find image src
-      linkContainer = link.closest(".sqs-block-html").addClass('activeLink');
+      linkContainer = link.closest(".sqs-block-html")
       imageContainer = linkContainer.next(".row");
       backgroundImages = imageContainer.find("img");
 
