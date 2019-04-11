@@ -1,43 +1,49 @@
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		var $body = $('body');
-      	$body.addClass('webflow-loaded');
 
-		// #collection-5c520e2f575d1fc8d4894937 - editors page
-		// #collection-5c521b3988251b50ff934ed3 - Heather Danosky
-		// #collection-5c521b634ae23726476305f1 - John Piccolo page 
-		// #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
-		// #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
-		// #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
-		// #collection-5c5345980d9297458f1d1810 - Chris Kursel
-		// #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
-		// #collection-5c6ac102104c7b6738d848ab - The Space (Contact Us)
-		// #collection-5c825a826e9a7f210e824e1d - New Editor Guy
-		// #collection-5c813802b208fc530a501290 - VFX page
-	
-		var editorsPages = [ 
-			"collection-5c520e2f575d1fc8d4894937", 
-			"collection-5c521b3988251b50ff934ed3",
-			"collection-5c521b634ae23726476305f1",
-			"collection-5c521bd6352f53324a568306",
-			"collection-5c5343d7eef1a12985b577b4",
-			"collection-5c521bfeb91c911f35a8b20b",
-			"collection-5c5345980d9297458f1d1810",
-			"collection-5c5345e5eef1a12985b599e2",
-			"collection-5c6ac102104c7b6738d848ab",
-			"collection-5c825a826e9a7f210e824e1d",
-			"collection-5c813802b208fc530a501290"
-		]
-		
-		setDarkThemeToPage();
+    var $body = $('body');
+    $body.addClass('webflow-loaded');
+
+    // #collection-5c520e2f575d1fc8d4894937 - editors page
+    // #collection-5c521b3988251b50ff934ed3 - Heather Danosky
+    // #collection-5c521b634ae23726476305f1 - John Piccolo page 
+    // #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
+    // #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
+    // #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
+    // #collection-5c5345980d9297458f1d1810 - Chris Kursel
+    // #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
+    // #collection-5c6ac102104c7b6738d848ab - The Space (Contact Us)
+    // #collection-5c825a826e9a7f210e824e1d - EVAN JOHNSTON
+    // #collection-5c813802b208fc530a501290 - VFX page
+
+    var darkThemePages = [ 
+        "collection-5c520e2f575d1fc8d4894937", 
+        "collection-5c6ac102104c7b6738d848ab",
+        "collection-5c813802b208fc530a501290"
+    ];
+    var editorPages = [
+        "collection-5c521b3988251b50ff934ed3",
+        "collection-5c521b634ae23726476305f1",
+        "collection-5c521bd6352f53324a568306",
+        "collection-5c5343d7eef1a12985b577b4",
+        "collection-5c521bfeb91c911f35a8b20b",
+        "collection-5c5345980d9297458f1d1810",
+        "collection-5c5345e5eef1a12985b599e2",
+        "collection-5c825a826e9a7f210e824e1d",
+    ];
+
+	(function mergeArrayToRight( leftArray, rightArray ) {
+        for(var i = 0; i < leftArray.length; i++) {
+            rightArray.push(leftArray[i])
+        }
+    })(editorPages, darkThemePages);
 
 
 	function setDarkThemeToPage() {
-		for (var i = 0; i < editorsPages.length; i++) {
-			var editorsPage = editorsPages[i]
+		for (var i = 0; i < darkThemePages.length; i++) {
+			var darkThemePage = darkThemePages[i]
 
-			// check if editors page
-			if ($body.attr('id') === editorsPage ) {
+			// check if dark theme page
+			if ($body.attr('id') === darkThemePage ) {
 				
 				// set class 
 				$body.addClass('dark-theme');
@@ -46,6 +52,7 @@
 			}
 		}
 	}
+
 	function replaceLogo() {
 		var $body = $('body')
 		let logo = $body.find('.Header-branding-logo');
@@ -56,15 +63,34 @@
 		mobileLogo.attr('src', whiteLogo);
 	}
 
-	// Sticky Header only for desktop theme
-	function stickyHeader() {
-		if( ! $body.hasClass('is-mobile')) {
-			header = $body.find('.Header--top')
-			mainContent = $body.find('.Site.loaded');
+    
+    function setEditorThemeToPage() {
+        for(var i = 0; i < editorPages.length; i++) {
+            var editorsPage = editorPages[i];
 
-			mainContent.css({"padding-top": header.height()})
-		}
-	}
+            if($body.attr('id') === editorsPage) {
+                $body.addClass('editor-page');
+
+                addClickListener();
+            }
+        }
+    }
+
+    function addClickListener() {
+        console.log('$body has class editor-page', $body.hasClass('editor-page'))
+        // on video play replace editor gif with name
+        var video = $('body').find('.sqs-video-wrapper');
+        
+        video.one('click', replaceGif);
+    }
+
+    function replaceGif(e) {
+        $('body').addClass('replaceGif');
+    }
+
+document.addEventListener("DOMContentLoaded", function() {
+    setDarkThemeToPage();
+    setEditorThemeToPage();
+
 })
-
 </script>
