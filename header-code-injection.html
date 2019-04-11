@@ -6,42 +6,65 @@
   
 <style>
 
-
-
-
-/*=========Footer Styling ==============*/
-
-/* Angled Footer */
-.Footer { 
-	background-color: #000;
-	clip-path: unset;
+/* ========== EDITORS PAGE =================== */
+.editor-page {
+	background: #000000;
 }
-.Footer-inner {
-	-webkit-font-smoothing: antialiased;
-	clip-path: polygon(0px 40%, 100% 0px, 100% 100%, 0% 100%);
-	background-color: #f8f8f8;
-	max-width: unset !important;
+.editor-page p a{
+	position: relative;
+	padding-bottom: 2px;
+	border: none;
+	text-decoration: none;
 }
-.Footer-blocks--bottom  {
-	max-width: 1920px;
-    margin-left: auto;
-    margin-right: auto;
+.editor-page p a:hover{
+	border-color: rgba(201,201,201,.6);
 }
-@media screen and (max-width: 640px) {
-	.Footer-inner  {
-		-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
-		clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+.editor-page p a::before{
+		border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-right: 6px solid #b1b1b1;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    transform: translate(-50%, 50%);
+    left: 0;
+    border-radius: 2px;
+}
+
+.editor-page p a::after{ 
+	content: "";
+    border-bottom: 1.2px solid #6e6e6e;
+    position: relative;
+    /* padding-bottom: 2px; */
+    transform: translateY(50%);
+    bottom: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+/* Hide GIF on mobile */
+@media screen and (max-width: 640px){
+	:not(.sqs-edit-mode-active).editor-page .span-6 .image-block {
+		display: none;
 	}
-} 
-.Footer h3 {
-	color: #1d1d1d !important;
 }
-.Footer p, 
-.Footer .footer-blocks {
-	color: #1c1c1cb0 !important;
-}
-.Footer a {
-	color: #000 !important;
+@media screen and (min-width: 640px){
+	:not(.sqs-edit-mode-active).editor-page h1 {
+		display: none;
+		margin: 0 auto;
+		word-wrap: break-word;
+		font-size: 16vw;
+		max-width: 30vw;
+	}
+	/* Replace Gif with H1 editor name */
+	:not(.sqs-edit-mode-active).editor-page.replaceGif .span-6 .image-block {
+		display: none;
+	}
+	:not(.sqs-edit-mode-active).editor-page.replaceGif .span-6 h1 {
+		display: block;
+	}
 }
 
 
@@ -79,7 +102,7 @@ body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
 }
 
 
-/* Set Dark theme to Editors pages */
+/*================= DARK THEME =================== */
 body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) {
   background-color: #000000;
 }
@@ -92,8 +115,7 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar
   background-color: #000000;
 }
 
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .social-icons-color-black.social-icons-style-regular .sqs-use--icon,
- {
+body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .social-icons-color-black.social-icons-style-regular .sqs-use--icon{
   fill: #e6e6e6 !important;
   color: #e6e6e6;
 }
@@ -115,7 +137,45 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
   color: #e6e6e6;
 }
 
-/* ========= Header Styling ============ */
+
+
+/*========= FOOTER ==============*/
+
+/* Angled Footer */
+.Footer { 
+	background-color: #000;
+	clip-path: unset;
+}
+.Footer-inner {
+	-webkit-font-smoothing: antialiased;
+	clip-path: polygon(0px 40%, 100% 0px, 100% 100%, 0% 100%);
+	background-color: #f8f8f8;
+	max-width: unset !important;
+}
+.Footer-blocks--bottom  {
+	max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 640px) {
+	.Footer-inner  {
+		-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+	}
+} 
+.Footer h3 {
+	color: #1d1d1d !important;
+}
+.Footer p, 
+.Footer .footer-blocks {
+	color: #1c1c1cb0 !important;
+}
+.Footer a {
+	color: #000 !important;
+}
+
+
+/* ========= MOBILE MENU ============ */
 
 /* Mobile Menu Full width  */
 .Mobile-overlay-menu {
@@ -135,13 +195,13 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 .Mobile-overlay-nav {
 	height: 100%;
 	display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-direction : normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction    : column;
-  flex-direction        : column;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-direction : normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction    : column;
+	flex-direction        : column;
 	-webkit-justify-content: center;
 	-ms-flex-pack          : center;
 	justify-content        : center;
@@ -157,84 +217,6 @@ body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-na
 	}
 }
 
-/* ======== Sticky Header  ============= */
-@media screen and (min-width: 970px) {
-	.dark-theme .Header.Header--top {
-		background-color: #000;
-	}
-}
 
 
 </style>
-
-
-<script>
-	
-	document.addEventListener("DOMContentLoaded", function() {
-		var $body = $('body')
-
-		// #collection-5c520e2f575d1fc8d4894937 - editors page
-		// #collection-5c521b3988251b50ff934ed3 - Heather Danosky
-		// #collection-5c521b634ae23726476305f1 - John Piccolo page 
-		// #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
-		// #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
-		// #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
-		// #collection-5c5345980d9297458f1d1810 - Chris Kursel
-		// #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
-		// #collection-5c6ac102104c7b6738d848ab - The Space (Contact Us)
-		// #collection-5c825a826e9a7f210e824e1d - New Editor Guy
-		// #collection-5c813802b208fc530a501290 - VFX page
-	
-		var editorsPages = [ 
-			"collection-5c520e2f575d1fc8d4894937", 
-			"collection-5c521b3988251b50ff934ed3",
-			"collection-5c521b634ae23726476305f1",
-			"collection-5c521bd6352f53324a568306",
-			"collection-5c5343d7eef1a12985b577b4",
-			"collection-5c521bfeb91c911f35a8b20b",
-			"collection-5c5345980d9297458f1d1810",
-			"collection-5c5345e5eef1a12985b599e2",
-			"collection-5c6ac102104c7b6738d848ab",
-			"collection-5c825a826e9a7f210e824e1d",
-			"collection-5c813802b208fc530a501290"
-		]
-		
-		setDarkThemeToPage();
-
-
-	function setDarkThemeToPage() {
-		for (var i = 0; i < editorsPages.length; i++) {
-			var editorsPage = editorsPages[i]
-
-			// check if editors page
-			if ($body.attr('id') === editorsPage ) {
-				
-				// set class 
-				$body.addClass('dark-theme');
-			
-				replaceLogo();				
-			}
-		}
-	}
-	function replaceLogo() {
-		var $body = $('body')
-		let logo = $body.find('.Header-branding-logo');
-		let mobileLogo = $body.find('.Mobile-bar-branding-logo');
-		let whiteLogo = "https://images.squarespace-cdn.com/content/5c3f815812b13f83032cb462/1553529999181-QT218H7CTAXRUZS47R44/";
-		// set new logo
-		logo.attr('src', whiteLogo);
-		mobileLogo.attr('src', whiteLogo);
-	}
-
-	// Sticky Header only for desktop theme
-	function stickyHeader() {
-		if( ! $body.hasClass('is-mobile')) {
-			header = $body.find('.Header--top')
-			mainContent = $body.find('.Site.loaded');
-
-			mainContent.css({"padding-top": header.height()})
-		}
-	}
-})
-
-</script>
