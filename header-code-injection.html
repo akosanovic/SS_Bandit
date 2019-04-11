@@ -10,38 +10,13 @@
 .editor-page {
 	background: #000000;
 }
-.editor-page p a{
+.editor-page h3 a{
 	position: relative;
-	padding-bottom: 2px;
-	border: none;
-	text-decoration: none;
+		text-decoration: none;
 }
-.editor-page p a:hover{
-	border-color: rgba(201,201,201,.6);
-}
-.editor-page p a::before{
-		border-top: 6px solid transparent;
-    border-bottom: 6px solid transparent;
-    border-right: 6px solid #b1b1b1;
-    content: "";
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
-    transform: translate(-50%, 50%);
-    left: 0;
-    border-radius: 2px;
-}
-
-.editor-page p a::after{ 
-	content: "";
-    border-bottom: 1.2px solid #6e6e6e;
-    position: relative;
-    /* padding-bottom: 2px; */
-    transform: translateY(50%);
-    bottom: 0px;
-    position: absolute;
-    left: 0;
-    right: 0;
+.editor-page h3:hover a{
+	color: rgba(255, 255, 255, 0.6 ) ;
+	border-color:gba(255, 255, 255, 0.6 );
 }
 
 /* Hide GIF on mobile */
@@ -81,10 +56,15 @@ body.dark-theme.dark-theme .sqs-gallery-block-grid .slide:hover .sqs-video-wrapp
 	left  : 0;
 	right : 0;
 	bottom: 0;
-	background: #000000;
+	background: rgba(0, 0, 0, 0.75);
 }
 body.dark-theme.dark-theme .sqs-gallery-block-grid .slide:hover .image-slide-title {
 	display: block; 
+}
+@media screen and (min-width: 100px) {
+	body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
+		font-size: 1.6rem;
+	}
 }
 body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
 	display: none;
@@ -95,9 +75,11 @@ body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
 	transform: translateY(-50%);
 	margin-top: 0;
 	
+	white-space: normal;
 	text-align: center;
+	line-height: 1;
 	font-family: bebas-neue;
-	font-size: 2em;
+	font-size: 2.3rem;
 	color: white; 
 }
 
