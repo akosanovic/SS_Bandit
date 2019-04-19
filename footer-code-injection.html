@@ -1,111 +1,108 @@
 <script>
-    var $body = $('body');
+  var $body = $("body");
 
-    // #collection-5c520e2f575d1fc8d4894937 - editors page
-    // #collection-5c521b3988251b50ff934ed3 - Heather Danosky
-    // #collection-5c521b634ae23726476305f1 - John Piccolo page 
-    // #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
-    // #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
-    // #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
-    // #collection-5c5345980d9297458f1d1810 - Chris Kursel
-    // #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
-    // #collection-5c825a826e9a7f210e824e1d - EVAN JOHNSTON
-    // #collection-5c813802b208fc530a501290 - VFX page
+  // #collection-5c520e2f575d1fc8d4894937 - editors page
+  // #collection-5c521b3988251b50ff934ed3 - Heather Danosky
+  // #collection-5c521b634ae23726476305f1 - John Piccolo page
+  // #collection-5c521bd6352f53324a568306 - Zeke O'DonneLL
+  // #collection-5c5343d7eef1a12985b577b4 - Peter Sabatino
+  // #collection-5c521bfeb91c911f35a8b20b - Robin Burchill
+  // #collection-5c5345980d9297458f1d1810 - Chris Kursel
+  // #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
+  // #collection-5c825a826e9a7f210e824e1d - EVAN JOHNSTON
+  // #collection-5c813802b208fc530a501290 - VFX page
 
-    var darkThemePages = [ 
-        "collection-5c520e2f575d1fc8d4894937",
-        "collection-5c813802b208fc530a501290"
-    ];
-    var editorPages = [
-        "collection-5c521b3988251b50ff934ed3",
-        "collection-5c521b634ae23726476305f1",
-        "collection-5c521bd6352f53324a568306",
-        "collection-5c5343d7eef1a12985b577b4",
-        "collection-5c521bfeb91c911f35a8b20b",
-        "collection-5c5345980d9297458f1d1810",
-        "collection-5c5345e5eef1a12985b599e2",
-        "collection-5c825a826e9a7f210e824e1d",
-    ];
+  var darkThemePages = [
+    "collection-5c520e2f575d1fc8d4894937",
+    "collection-5c813802b208fc530a501290"
+  ];
+  var editorPages = [
+    "collection-5c521b3988251b50ff934ed3",
+    "collection-5c521b634ae23726476305f1",
+    "collection-5c521bd6352f53324a568306",
+    "collection-5c5343d7eef1a12985b577b4",
+    "collection-5c521bfeb91c911f35a8b20b",
+    "collection-5c5345980d9297458f1d1810",
+    "collection-5c5345e5eef1a12985b599e2",
+    "collection-5c825a826e9a7f210e824e1d"
+  ];
 
-	(function mergeArrayToRight( leftArray, rightArray ) {
-        for(var i = 0; i < leftArray.length; i++) {
-            rightArray.push(leftArray[i])
-        }
-    })(editorPages, darkThemePages);
-
-
-	function setDarkThemeToPage() {
-		for (var i = 0; i < darkThemePages.length; i++) {
-			var darkThemePage = darkThemePages[i]
-
-			// check if dark theme page
-			if ($body.attr('id') === darkThemePage ) {
-				
-				// set class 
-				$body.addClass('dark-theme');
-                
-                // Depricated; All logos are now the same
-				// replaceLogo();				
-			}
-		}
-	}
-
-	function replaceLogo() {
-		var $body = $('body')
-		let logo = $body.find('.Header-branding-logo');
-		let mobileLogo = $body.find('.Mobile-bar-branding-logo');
-		let whiteLogo  = "https://images.squarespace-cdn.com/content/5c3f815812b13f83032cb462/1553529999181-QT218H7CTAXRUZS47R44/";
-		// set new logo
-		logo.attr('src', whiteLogo);
-		mobileLogo.attr('src', whiteLogo);
-	}
-  
-    function setEditorThemeToPage() {
-        for(var i = 0; i < editorPages.length; i++) {
-            var editorsPage = editorPages[i];
-
-            if($body.attr('id') === editorsPage) {
-                $body.addClass('editor-page');
-
-                addClickListener();
-            }
-        }
+  (function mergeArrayToRight(leftArray, rightArray) {
+    for (var i = 0; i < leftArray.length; i++) {
+      rightArray.push(leftArray[i]);
     }
+  })(editorPages, darkThemePages);
 
-    function addClickListener() {
-        console.log('$body has class editor-page', $body.hasClass('editor-page'))
-        // on video play replace editor gif with name
-        var video = $('body').find('.sqs-video-wrapper');
-        
-        video.one('click', replaceGif);
+  function setDarkThemeToPage() {
+    for (var i = 0; i < darkThemePages.length; i++) {
+      var darkThemePage = darkThemePages[i];
+
+      // check if dark theme page
+      if ($body.attr("id") === darkThemePage) {
+        // set class
+        $body.addClass("dark-theme");
+
+        // Depricated; All logos are now the same
+        // replaceLogo();
+      }
     }
+  }
 
-    function replaceGif(e) {
-        $('body').addClass('replaceGif');
+  function replaceLogo() {
+    var $body = $("body");
+    let logo = $body.find(".Header-branding-logo");
+    let mobileLogo = $body.find(".Mobile-bar-branding-logo");
+    let whiteLogo =
+      "https://images.squarespace-cdn.com/content/5c3f815812b13f83032cb462/1553529999181-QT218H7CTAXRUZS47R44/";
+    // set new logo
+    logo.attr("src", whiteLogo);
+    mobileLogo.attr("src", whiteLogo);
+  }
+
+  function setEditorThemeToPage() {
+    for (var i = 0; i < editorPages.length; i++) {
+      var editorsPage = editorPages[i];
+
+      if ($body.attr("id") === editorsPage) {
+        $body.addClass("editor-page");
+
+        addClickListener();
+      }
     }
+  }
 
-    function injectVideoTitleToSlide() {
-        var videoGallery = $body.find('.gallery-block');
-        if(videoGallery) {
-            var slides = videoGallery.find('.slide');
-            console.log('slides ', slides);
-            
-            for(var i = 0; i < slides.length; i++) {
-                slide = $(slides[i]);
-                var videoTitle = slide.find(".image-slide-title");
-                var clickableContainer = slide.find('.sqs-video-overlay');
-                console.log('video title ', videoTitle, 'clickable container ', clickableContainer);
-                clickableContainer.append(videoTitle)
-            }
-        }
+  function addClickListener() {
+    console.log("$body has class editor-page", $body.hasClass("editor-page"));
+    // on video play replace editor gif with name
+    var video = $("body").find(".sqs-video-wrapper");
+
+    video.one("click", replaceGif);
+  }
+
+  function replaceGif(e) {
+    $("body").addClass("replaceGif");
+  }
+
+  function injectVideoTitleToSlide() {
+    var videoGallery = $body.find(".gallery-block");
+    if (videoGallery) {
+      var slides = videoGallery.find(".slide");
+      
+
+      for (var i = 0; i < slides.length; i++) {
+        slide = $(slides[i]);
+        var videoTitle = slide.find(".image-slide-title");
+        var clickableContainer = slide.find(".sqs-video-overlay");
+        clickableContainer.append(videoTitle);
+      }
     }
+  }
 
-function init() {
+  function init() {
     setDarkThemeToPage();
     setEditorThemeToPage();
     injectVideoTitleToSlide();
-}
-$(document).ready( init )
-window.addEventListener('mercury:load', init);
-
+  }
+  $(document).ready(init);
+  window.addEventListener("mercury:load", init);
 </script>
