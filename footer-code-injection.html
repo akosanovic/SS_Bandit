@@ -1,7 +1,5 @@
 <script>
-
     var $body = $('body');
-    $body.addClass('webflow-loaded');
 
     // #collection-5c520e2f575d1fc8d4894937 - editors page
     // #collection-5c521b3988251b50ff934ed3 - Heather Danosky
@@ -45,8 +43,9 @@
 				
 				// set class 
 				$body.addClass('dark-theme');
-			
-				replaceLogo();				
+                
+                // Depricated; All logos are now the same
+				// replaceLogo();				
 			}
 		}
 	}
@@ -55,13 +54,12 @@
 		var $body = $('body')
 		let logo = $body.find('.Header-branding-logo');
 		let mobileLogo = $body.find('.Mobile-bar-branding-logo');
-		let whiteLogo = "https://images.squarespace-cdn.com/content/5c3f815812b13f83032cb462/1553529999181-QT218H7CTAXRUZS47R44/";
+		let whiteLogo  = "https://images.squarespace-cdn.com/content/5c3f815812b13f83032cb462/1553529999181-QT218H7CTAXRUZS47R44/";
 		// set new logo
 		logo.attr('src', whiteLogo);
 		mobileLogo.attr('src', whiteLogo);
 	}
-
-    
+  
     function setEditorThemeToPage() {
         for(var i = 0; i < editorPages.length; i++) {
             var editorsPage = editorPages[i];
@@ -86,9 +84,28 @@
         $('body').addClass('replaceGif');
     }
 
-document.addEventListener("DOMContentLoaded", function() {
+    function injectVideoTitleToSlide() {
+        var videoGallery = $body.find('.gallery-block');
+        if(videoGallery) {
+            var slides = videoGallery.find('.slide');
+            console.log('slides ', slides);
+            
+            for(var i = 0; i < slides.length; i++) {
+                slide = $(slides[i]);
+                var videoTitle = slide.find(".image-slide-title");
+                var clickableContainer = slide.find('.sqs-video-overlay');
+                console.log('video title ', videoTitle, 'clickable container ', clickableContainer);
+                clickableContainer.append(videoTitle)
+            }
+        }
+    }
+
+function init() {
     setDarkThemeToPage();
     setEditorThemeToPage();
+    injectVideoTitleToSlide();
+}
+$(document).ready( init )
+window.addEventListener('mercury:load', init);
 
-})
 </script>
