@@ -1,0 +1,37 @@
+/* ========== EDITORS PAGE =================== */
+
+.editor-page {
+    background: #000000;
+     h3 a{
+        position: relative;
+            text-decoration: none;
+    }
+    h3:hover a{
+        color: rgba(255, 255, 255, 0.6 ) ;
+        border-color:gba(255, 255, 255, 0.6 );
+    }
+}
+
+
+@media screen and (max-width: 640px){
+    /* Hide GIF on mobile */
+	:not(.sqs-edit-mode-active).editor-page .span-6 .image-block {
+		display: none;
+	}
+}
+@media screen and (min-width: 640px){
+	:not(.sqs-edit-mode-active).editor-page h1 {
+		display: none;
+		margin: 0 auto;
+		word-wrap: break-word;
+		font-size: 16vw;
+		max-width: 30vw;
+	}
+	/* Replace Gif with H1 editor name */
+	:not(.sqs-edit-mode-active).editor-page.replaceGif .span-6 .image-block {
+		display: none;
+	}
+	:not(.sqs-edit-mode-active).editor-page.replaceGif .span-6 h1 {
+		display: block;
+	}
+}

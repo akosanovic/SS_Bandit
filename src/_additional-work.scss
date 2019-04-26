@@ -1,0 +1,24 @@
+/* ========== Additional Work =================== */
+#collection-5cb4e2dba4222f9d25f9be09 {
+    .Index-page--has-image{
+        transition: all ease-in-out 500ms;
+        filter: grayscale(1);
+    }
+    .Index-page--has-image:hover {
+        transition: all ease-in-out 500ms;
+        filter: none;
+    }
+    
+    /* Dark Footer  */
+    .Footer-inner {
+        background-color: #000000 !important;
+    }
+    .Footer h3,
+    .Footer p, 
+    .Footer a{
+        color: #ffffff !important;
+        border-color: rgba(255, 255, 255, 0.7)!important;
+    }
+}
+
+

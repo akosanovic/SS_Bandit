@@ -1,0 +1,35 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    
+    "clean"  : "rimraf dist",
+    "prefix" : "postcss dist/main.css --use=autoprefixer --map=false --output=dist/main.css",
+    "compile": "node-sass --output-style=expanded --source-map=false src/main.scss dist/main.css",
+    "dev": "npm run clean && npm run compile && npm run prefix  -- --watch"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ],
+      
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akosanovic/SS_Bandit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akosanovic/SS_Bandit/issues"
+  },
+  "homepage": "https://github.com/akosanovic/SS_Bandit#readme",
+  "devDependencies": {
+    "autoprefixer" : "^9.5.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass"    : "^4.11.0",
+    "postcss-cli"  : "^6.1.2"
+  }
+}

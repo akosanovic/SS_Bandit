@@ -1,5 +1,21 @@
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+		crossorigin="anonymous">
+</script>
+
 <script>
   var $body = $("body");
+
+  // Navigation Link to Page Section
+  (function addOriginToNavLink() {
+    var nav = $('.Mobile-overlay-nav-item');
+    for(var i = 0; i < nav.length; i++) { 
+      if ( (nav[i].href).indexOf("#") > 0 ) {
+         nav[i].href = this.location.origin + nav[i].href  
+      }
+    }
+  })()
 
   // #collection-5c520e2f575d1fc8d4894937 - editors page
   // #collection-5c521b3988251b50ff934ed3 - Heather Danosky
@@ -103,6 +119,7 @@
     setEditorThemeToPage();
     injectVideoTitleToSlide();
   }
+
   $(document).ready(init);
   window.addEventListener("mercury:load", init);
 </script>
