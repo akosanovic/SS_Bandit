@@ -1,0 +1,45 @@
+
+/* ========= MOBILE MENU ============ */
+
+/* Mobile Menu Full width  */
+.Mobile-overlay-menu {
+	width: 100%;
+}
+/* Close button */
+.is-mobile-overlay-active  .Mobile-overlay-close {	
+	z-index: 3;
+	background: transparent;
+	stroke: white;
+}
+/* Center Navigation */
+.Mobile-overlay-menu-main {
+	max-height: 100%;
+	overflow: hidden;
+}
+.Mobile-overlay-nav {
+	height: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-direction : normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction    : column;
+	flex-direction        : column;
+	-webkit-justify-content: center;
+	-ms-flex-pack          : center;
+	justify-content        : center;
+}
+.Mobile-overlay .Mobile-overlay-nav a.Mobile-overlay-nav-item {
+	text-align: center;
+	padding: 20px 0;
+	font-size: 30px;
+	color: white;
+}
+@media screen and (min-width: 768px) {
+	.Mobile-overlay	.Mobile-overlay-nav a.Mobile-overlay-nav-item {
+		font-size: 30px;
+	}
+}
+
+

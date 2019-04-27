@@ -1,0 +1,37 @@
+
+/*========= FOOTER ==============*/
+
+/* Angled Footer */
+.Footer { 
+	background-color: #000;
+	clip-path: unset;
+}
+.Footer-inner {
+	-webkit-font-smoothing: antialiased;
+	-webkit-clip-path: polygon(0px 40%, 100% 0px, 100% 100%, 0% 100%);
+	clip-path: polygon(0px 40%, 100% 0px, 100% 100%, 0% 100%);
+	background-color: #f8f8f8;
+	max-width: unset !important;
+}
+.Footer-blocks--bottom  {
+	max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 640px) {
+	.Footer-inner  {
+		-webkit-clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0 25%, 100% 0, 100% 100%, 0% 100%);
+	}
+} 
+.Footer h3 {
+	color: #1d1d1d !important;
+}
+.Footer p, 
+.Footer .footer-blocks {
+	color: #1c1c1cb0 !important;
+}
+.Footer a {
+	color: #000 !important;
+}
+

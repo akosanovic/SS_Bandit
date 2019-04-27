@@ -1,0 +1,56 @@
+
+
+
+
+/*========== Additional Work  Pages ===============*/ 
+@media screen and (max-width: 640px) {
+.title-right,
+.title-left {
+        h1 {
+        font-size: 40px;  
+    }  
+}
+}
+@media screen and (min-width: 640px) {
+.title-right,
+.title-left {
+        h1 {
+        z-index : 2;
+        position: relative;
+        
+        margin-top   : 0;
+        margin-bottom: 0;
+
+        font-size: 8vw;
+    }  
+}
+.title-right,
+.title-left {
+    h1:last-of-type {
+        margin-bottom: 1em;
+    }
+}
+.title-right,
+.title-left {
+        h3{
+        font-size: 22px;
+        line-height: 1;
+    }
+}
+
+.code-block .title-left h3, 
+.code-block .title-left h1{
+    text-align: right;
+}
+.code-block .title-left h1 {
+    margin-right: -40%;
+}
+
+.code-block .title-right h3, 
+.code-block .title-right h1{
+    text-align: left;
+}
+.code-block .title-right h1{
+    margin-left: -40%;
+}
+}

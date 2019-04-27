@@ -1,7 +1,3 @@
-	
-				
-	
-
  
 /* ========== HOME PAGE =================== */
 .homepage {
@@ -48,39 +44,40 @@
             @media screen and (min-width: 1400px) {
                     width: 18%; 
             } 	
-            
-            /* Featured Gallery -  Show video Title on hover */
-            .slide {
-                position: relative; 
-                
-                &:hover{
-                    .sqs-video-wrapper:before {
-                        content: '';
-                        z-index: 1;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        right: 0;
-                        bottom: 0;
-                        background: rgba(0, 0, 0, 0.75); 
-                    }
-                    .image-slide-title {
-                        display: block;
-                    }
-                } 
-                .image-slide-title {
-                    display: none;
-                    z-index: 2;
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    text-align: center;
-                    font-family: bebas-neue;
-                    font-size: 2em;
-                    color: white; 
-                }
-            }	
         }
+            
+        /* Featured Gallery -  Show video Title on hover */
+        .slide {
+            position: relative; 
+            
+            &:hover{
+                .sqs-video-wrapper:before {
+                    content: '';
+                    z-index: 1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.75); 
+                }
+                .image-slide-title {
+                    display: block;
+                }
+            } 
+            .image-slide-title {
+                display: none;
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                font-family: bebas-neue;
+                font-size: 2em;
+                color: white; 
+            }
+        }	
+        
 
         h1 {
             text-shadow: 2px 2px 5px #000;
