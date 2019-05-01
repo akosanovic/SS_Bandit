@@ -7,7 +7,6 @@
 
 <script>
   var $body = $("body");
-
   // #collection-5c520e2f575d1fc8d4894937 - editors page
   // #collection-5c521b3988251b50ff934ed3 - Heather Danosky
   // #collection-5c521b634ae23726476305f1 - John Piccolo page
@@ -17,12 +16,7 @@
   // #collection-5c5345980d9297458f1d1810 - Chris Kursel
   // #collection-5c5345e5eef1a12985b599e2 - Jim Rubino
   // #collection-5c825a826e9a7f210e824e1d - EVAN JOHNSTON
-  // #collection-5c813802b208fc530a501290 - VFX page
 
-  var darkThemePages = [
-    "collection-5c520e2f575d1fc8d4894937",
-    "collection-5c813802b208fc530a501290"
-  ];
   var editorPages = [
     "collection-5c521b3988251b50ff934ed3",
     "collection-5c521b634ae23726476305f1",
@@ -42,26 +36,8 @@
     }
   })();
 
-  (function mergeArrayToRight(leftArray, rightArray) {
-    for (var i = 0; i < leftArray.length; i++) {
-      rightArray.push(leftArray[i]);
-    }
-  })(editorPages, darkThemePages);
 
-  function setDarkThemeToPage() {
-    for (var i = 0; i < darkThemePages.length; i++) {
-      var darkThemePage = darkThemePages[i];
 
-      // check if dark theme page
-      if ($body.attr("id") === darkThemePage) {
-        // set class
-        $body.addClass("dark-theme");
-
-        // Depricated; All logos are now the same
-        // replaceLogo();
-      }
-    }
-  }
 
   function replaceLogo() {
     var $body = $("body");
@@ -99,7 +75,7 @@
     $("body").addClass("replaceGif");
   };
 
-  function injectVideoTitleToSlide() {
+  function clickableVideoTitle() {
     var videoGallery = $body.find(".gallery-block");
     if (videoGallery) {
       var slides = videoGallery.find(".slide");
@@ -114,9 +90,8 @@
   };
 
   function init() {
-    setDarkThemeToPage();
     setEditorThemeToPage();
-    injectVideoTitleToSlide();
+    clickableVideoTitle();
   };
 
   $(document).ready(init);
