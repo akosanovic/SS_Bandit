@@ -85,12 +85,11 @@
   }
 }
 
-/* Show Title on Slide Hover - Editors pages  */
-body.dark-theme.dark-theme .sqs-gallery-block-grid .slide {
+.sqs-gallery-container.sqs-gallery-block-meta-only-title .slide {
   position: relative;
 }
 
-body.dark-theme.dark-theme .sqs-gallery-block-grid .slide:hover .sqs-video-wrapper:before {
+.sqs-gallery-container.sqs-gallery-block-meta-only-title .slide:hover .sqs-video-wrapper:before {
   content: '';
   z-index: 1;
   position: absolute;
@@ -101,17 +100,11 @@ body.dark-theme.dark-theme .sqs-gallery-block-grid .slide:hover .sqs-video-wrapp
   background: rgba(0, 0, 0, 0.75);
 }
 
-body.dark-theme.dark-theme .sqs-gallery-block-grid .slide:hover .image-slide-title {
+.sqs-gallery-container.sqs-gallery-block-meta-only-title .slide:hover .image-slide-title {
   display: block;
 }
 
-@media screen and (min-width: 100px) {
-  body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
-    font-size: 1.6rem;
-  }
-}
-
-body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
+.sqs-gallery-container.sqs-gallery-block-meta-only-title .slide .image-slide-title {
   display: none;
   z-index: 2;
   position: absolute;
@@ -125,45 +118,6 @@ body.dark-theme.dark-theme .sqs-gallery-block-grid .slide .image-slide-title {
   font-family: bebas-neue;
   font-size: 2.3rem;
   color: white;
-}
-
-/*================= DARK THEME =================== */
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) {
-  background-color: #000000;
-}
-
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Main,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Index-page {
-  background-color: transparent;
-}
-
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar--top {
-  background-color: #000000;
-}
-
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .social-icons-color-black.social-icons-style-regular .sqs-use--icon {
-  fill: #e6e6e6 !important;
-  color: #e6e6e6;
-}
-
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar-menu,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) .Mobile-bar-search {
-  stroke: white;
-}
-
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h1,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h2 a,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h2,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) h3,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) p {
-  color: white;
-}
-
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item:hover,
-body.has-logo-image.dark-theme.dark-theme:not(.sqs-edit-mode-active) a.Header-nav-item.Header-nav-item--active {
-  color: #e6e6e6;
 }
 
 /* ========== HOME PAGE =================== */
