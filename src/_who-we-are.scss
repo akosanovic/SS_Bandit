@@ -1,4 +1,4 @@
-#collection-5c6ac102104c7b6738d848ab {
+#collection-5c6ac102104c7b6738d848ab{
     
 /*========== WHO WE ARE ===============*/ 
   .Index-page {
@@ -8,27 +8,26 @@
   	color: black;
   }
   a:not(.Mobile-overlay-nav-item),
-  .sqs-block-html p a{
+  .sqs-block-html p a {
     color: rgba(0, 0, 0, 0.7);
-  	 border-bottom-color: hsla(0, 0%, 0%, 0.7);
+  	border-bottom-color: hsla(0, 0%, 0%, 0.7);
   }
-   a:hover:not(.Mobile-overlay-nav-item),
+  a:hover:not(.Mobile-overlay-nav-item),
   .sqs-block-html p a:hover {
      color: #000;
   	 border-bottom-color: #000;
   }
-  
-  
-  .small-button-style-outline .sqs-block-button .sqs-block-button-element--small {
+   
+  .sqs-block-button-element--small.sqs-block-button-element {
   	color: #121212;
     border-color: #121212;
+    &:hover {
+      	color: #fff;
+        border-color: transparetn;
+        background-color: #121212;
+    }
   }
-  .small-button-style-outline .sqs-block-button .sqs-block-button-element--small:hover {
-  	color: #fff;
-    border-color: transparetn;
-    background-color: #121212;
-  }
-  
+
   .Footer {
   	background: #ffffff !important;
   }

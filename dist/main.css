@@ -2,8 +2,7 @@
 /* Angled Footer */
 .Footer {
   background-color: #000;
-  -webkit-clip-path: unset;
-          clip-path: unset;
+  clip-path: unset;
 }
 
 .Footer-inner {
@@ -62,14 +61,16 @@
 .Mobile-overlay-nav {
   height: 100%;
   display: -webkit-box;
+  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: center;
   -ms-flex-pack: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
 }
 
 .Mobile-overlay .Mobile-overlay-nav a.Mobile-overlay-nav-item {
@@ -109,8 +110,7 @@
   z-index: 2;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   margin-top: 0;
   white-space: normal;
   text-align: center;
@@ -145,8 +145,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   height: 40px;
   border-left: 2px solid #ffffff;
 }
@@ -215,8 +214,7 @@
   z-index: 2;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   text-align: center;
   font-family: bebas-neue;
   font-size: 2em;
@@ -227,13 +225,29 @@
   text-shadow: 2px 2px 5px #000;
 }
 
-.homepage #featuredwork .sqs-block-button-element {
-  font-size: 16px;
-  margin-bottom: 100px;
+.homepage #featuredwork .sqs-row:last-child {
+  display: flex;
+  justify-content: space-around;
+}
+
+.homepage #featuredwork .sqs-row:last-child .sqs-col-2 {
+  width: auto;
 }
 
 @media screen and (max-width: 640px) {
-  .homepage #featuredwork .sqs-block-button-element .sqs-block-button-element {
+  .homepage #featuredwork .sqs-row:last-child .sqs-col-2 .button-block {
+    padding-top: 0 !important;
+  }
+}
+
+.homepage #featuredwork .sqs-row:last-child .sqs-col-2 .sqs-block-button-element {
+  padding: 16px 24px;
+  margin-bottom: 100px;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 640px) {
+  .homepage #featuredwork .sqs-row:last-child .sqs-col-2 .sqs-block-button-element {
     margin-bottom: 0;
   }
 }
@@ -248,8 +262,7 @@
   position: absolute;
   bottom: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   height: 50%;
   border-right: 2px solid #ffffff;
 }
@@ -300,26 +313,17 @@
 
 @media screen and (min-width: 640px) {
   .homepage #contact-page .row {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    justify-content: space-around;
   }
   .homepage #contact-page .row .span-4 {
     width: unset;
     float: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
+  }
+  .homepage #contact-page .row .span-4 .sqs-block-content {
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
   .homepage #contact-page .row h1 {
     margin-bottom: 0;
@@ -328,7 +332,7 @@
     font-weight: 600;
   }
   .homepage #contact-page .row h3 + h1 {
-    margin-top: 30px;
+    margin-top: 2vw;
   }
   .homepage #contact-page .row h2 {
     font-weight: 600;
@@ -342,7 +346,7 @@
     margin-top: 5px;
   }
   .homepage #contact-page .row h2 + h3 {
-    margin-bottom: 30px;
+    margin-bottom: 2vw;
   }
 }
 
@@ -441,17 +445,13 @@
 }
 
 #collection-5cb4e2dba4222f9d25f9be09 .Index-page--has-image {
-  -webkit-transition: all ease-in-out 500ms;
   transition: all ease-in-out 500ms;
-  -webkit-filter: grayscale(1);
-          filter: grayscale(1);
+  filter: grayscale(1);
 }
 
 #collection-5cb4e2dba4222f9d25f9be09 .Index-page--has-image:hover {
-  -webkit-transition: all ease-in-out 500ms;
   transition: all ease-in-out 500ms;
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 #collection-5cb4e2dba4222f9d25f9be09 .Footer-inner {
@@ -506,4 +506,5 @@
     margin-left: -40%;
   }
 }
-/*# sourceMappingURL=main.css.map */
+
+/*# sourceMappingURL=../false/main.css.map */
